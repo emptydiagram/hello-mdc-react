@@ -1,24 +1,46 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Button from '@material/react-button';
+import TextField, {HelperText, Input} from '@material/react-text-field';
 
-function App() {
+import './App.css';
+import '@material/react-button/dist/button.css';
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.setState({
+      name: '',
+      email: '',
+    });
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <main className="App-main">
+        <h2>:P testing form components</h2>
+        <Button
+          raised
+          className='button-alternate'
+          onClick={() => console.log('clicked!')}
         >
-          Learn React
-        </a>
-      </header>
+          Click Me!
+        </Button>
+        <p>
+          <TextField label='Name'>
+            <Input
+              value={this.state.name}
+              onChange={(e) => this.setState({name: e.currentTarget.value})} />
+          </TextField>
+        </p>
+        <p>
+          <TextField label='Email Address'>
+            <Input
+              value={this.state.email}
+              onChange={(e) => this.setState({email: e.currentTarget.value})} />
+          </TextField>
+        </p>
+      </main>
     </div>
   );
 }
