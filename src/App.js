@@ -25,20 +25,16 @@ class App extends React.Component {
           >
             Click Me!
           </Button>
-          <p>
-            <TextField label='Name'>
-              <Input
-                value={this.state.name}
-                onChange={(e) => this.setState({name: e.currentTarget.value})} />
-            </TextField>
-          </p>
-          <p>
-            <TextField label='Email Address'>
-              <Input
-                value={this.state.email}
-                onChange={(e) => this.setState({email: e.currentTarget.value})} />
-            </TextField>
-          </p>
+          <TextField label='Name'>
+            <Input
+              value={this.state.name}
+              onChange={(e) => this.setState({name: e.currentTarget.value})} />
+          </TextField>
+          <TextField label='Email Address'>
+            <Input
+              value={this.state.email}
+              onChange={(e) => this.setState({email: e.currentTarget.value})} />
+          </TextField>
         </main>
       </div>
     );
