@@ -8,6 +8,7 @@ import './App.css';
 import '@material/react-button/dist/button.css';
 import '@material/react-tab/dist/tab.css';
 import '@material/react-tab-bar/dist/tab-bar.css';
+import '@material/react-tab-indicator/dist/tab-indicator.css';
 import '@material/react-tab-scroller/dist/tab-scroller.css';
 import '@material/react-text-field/dist/text-field.css';
 
@@ -17,6 +18,8 @@ class App extends React.Component {
 
     this.state = {name: '', email: '', activeIndex: 2};
   }
+
+  handleActiveIndexUpdate = (activeIndex) => this.setState({activeIndex});
 
   render() {
     return (
